@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap -->
+    <link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/assets/css/animate.min.css" rel="stylesheet">
+    <link href="~/Content/assets/css/main.min.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~Content/assets/images/favicon.ico">
+
+    @*<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Fira+Sans:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>*@
+</head>
+<body>
+    <div id="wrapper">
+        <div id="page-content-wrapper" class="st-pusher">
+            <div class="st-pusher-after"></div>
+            <!-- ============================================== HEADER ============================================== -->
+            @Html.Partial("_Header")
+            <!-- ============================================== HEADER : END ============================================== -->
+            <div class="home-page">
+               @RenderBody()
+            </div><!-- /.home-page -->
+            <!-- ============================================== FOOTER ============================================== -->
+            @Html.Partial("_Footer")
+            <!-- ============================================== FOOTER : END ============================================== -->
+        </div><!-- /.st-pusher -->
+        <!-- ============================================== TOGGLE RIGHT CONTENT ============================================== -->
+        @Html.Partial("_CartRight")
+        <!-- ============================================== TOGGLE RIGHT CONTENT : END ============================================== -->
+    </div><!-- /#wrapper -->
+
+    <script src="~/Content/assets/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap-hover-dropdown.min.js"></script>
+    <script src="~/Content/assets/js/owl.carousel.min.js"></script>
+    <script src="~/Content/assets/js/perfect-scrollbar.min.js"></script>
+    <script src="~/Content/assets/js/jquery-ui.min.js"></script>
+    <script src="~/Content/assets/js/jquery.customSelect.min.js"></script>
+    <script src="~/Content/assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="~/Content/assets/js/wow.min.js"></script>
+    <script src="~/Content/assets/js/echo.min.js"></script>
+    <script src="~/Content/assets/js/scripts.js"></script>
+</body>
+</html>
