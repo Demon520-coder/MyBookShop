@@ -1,40 +1,85 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap -->
+    <link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/assets/css/animate.min.css" rel="stylesheet">
+    <link href="~/Content/assets/css/main.min.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Content/assets/images/favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fira+Sans:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
+    <div id="wrapper">
+        <div id="page-content-wrapper" class="st-pusher">
+            <div class="st-pusher-after"></div>
+            <!-- ============================================== HEADER ============================================== -->
+            @Html.Partial("_Header")
+            <!-- ============================================== HEADER : END ============================================== -->
+            <div class="content wow fadeInUp">
+                <div class="container">
+                    <div class="row">
+                        <ul class="breadcrumb text-center">
+                            <li><a href="home.html">Home</a></li>
+                            <li class="active">@ViewBag.Active</li>
+                        </ul><!-- /.breadcrumb -->
+
+                        <div class="divider">
+                            <img class="img-responsive" src="~/Content/assets/images/shadow.png" alt="">
+                        </div><!-- /.divider -->
+                    </div><!-- /.row -->
+
+                    <div class="row m-t-20 books-with-sidebar">
+                        <div class="col-md-9 col-md-push-3">
+                            <!-- ========================================== SECTION �?HERO : END========================================= -->
+                            <div id="hero1" class='category-slider'>
+                                @Html.Partial("_SliderPartail")
+                            </div>
+                            @RenderBody()
+                        </div>
+
+                        <div class="col-md-3 col-md-pull-9">
+                            <aside class="sidebar">
+                                <!-- ============================================== CUSTOMER FAVOURITES ============================================== -->
+                                @Html.Partial("_BooksLeftSider")
+                                <!-- ============================================== CUSTOMER FAVOURITES : END ============================================== -->
+                                <!-- ============================================== BOOKS BY SUBJECT ============================================== -->
+                           
+                                <!-- ============================================== BEST BOOKS : END ============================================== -->
+                            </aside>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+
+            </div><!-- /.content -->
+            <!-- ============================================== FOOTER ============================================== -->
+            @Html.Partial("_Footer")
+            <!-- ============================================== FOOTER : END ============================================== -->
+        </div><!-- /.st-pusher -->
+        <!-- ============================================== TOGGLE RIGHT CONTENT ============================================== -->
+
+        <div id="cart-dropdown-wrapper">
+            @Html.Partial("_CartRight")
         </div>
-    </div>
+    </div><!-- /#wrapper -->
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Content/assets/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap.min.js"></script>
+    <script src="~/Content/assets/js/bootstrap-hover-dropdown.min.js"></script>
+    <script src="~/Content/assets/js/owl.carousel.min.js"></script>
+    <script src="~/Content/assets/js/perfect-scrollbar.min.js"></script>
+    <script src="~/Content/assets/js/jquery-ui.min.js"></script>
+    <script src="~/Content/assets/js/jquery.customSelect.min.js"></script>
+    <script src="~/Content/assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="~/Content/assets/js/wow.min.js"></script>
+    <script src="~/Content/assets/js/echo.min.js"></script>
+    <script src="~/Content/assets/js/scripts.js"></script>
+    @RenderSection("scripts",false)
 </body>
 </html>

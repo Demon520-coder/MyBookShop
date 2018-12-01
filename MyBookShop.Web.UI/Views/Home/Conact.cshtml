@@ -1,0 +1,92 @@
+﻿@model MyBookShop.Web.ViewModel.ConactViewModel
+@{
+    Layout = "~/Views/Shared/_LayoutAbout.cshtml";
+    ViewBag.Active = "留言";
+}
+
+<div class="row inner-top-md">
+    <div class='col-md-10 center-block'>
+        <div class="contact-block">
+            <div class="contact-form-envelope">
+                <div class="contact-box">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-8">
+                            <div class="contact-form">
+                                @using (Html.BeginForm("Conact", "Home", FormMethod.Post))
+                                {
+                                    @Html.ValidationSummary(true, "")
+                                    @Html.AntiForgeryToken()
+                                    <div class="form-group">
+                                        @Html.LabelFor(s => s.CustomerName, new { @class = "control-label col-sm-3 info-title" })
+                                        @Html.TextBoxFor(s => s.CustomerName, new { @class = "form-control bookshop-form-control", placeholder = "你的称呼" })
+                                        @Html.ValidationMessageFor(s => s.CustomerName, "", new { @class = "text-danger" })
+
+                                    </div><!-- /.form-group -->
+                                    <div class="form-group">
+                                        @Html.LabelFor(s => s.Email, new { @class = "control-label col-sm-3 info-title" })
+                                        @Html.TextBoxFor(s => s.Email, new { @class = "form-control bookshop-form-control", placeholder = "你的称呼" })
+                                        @Html.ValidationMessageFor(s => s.CustomerName, "", new { @class = "text-danger" })
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(s => s.Subject, new { @class = "control-label col-sm-3 info-title" })
+                                        @Html.TextBoxFor(s => s.Subject, new { @class = "form-control bookshop-form-control", placeholder = "你的称呼" })
+                                        @Html.ValidationMessageFor(s => s.CustomerName, "", new { @class = "text-danger" })
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group">
+
+                                        @Html.LabelFor(s => s.Message, new { @class = "control-label col-sm-3 info-title" })
+                                        @Html.TextAreaFor(s => s.Message, 5, 10, new { @class = "form-control bookshop-form-control" })
+                                        @Html.ValidationMessageFor(s => s.CustomerName, "", new { @class = "text-danger" })
+
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-3 info-title sr-only"></label>
+                                        <div class="col-sm-9">
+                                            <button class="btn-uppercase btn btn-primary " type="submit">确定</button>
+                                        </div><!-- /.col -->
+                                    </div><!-- /.form-group -->
+                                }
+                            </div><!-- /.contact-form -->
+                        </div><!-- /.col -->
+                        <div class="col-md-4 col-sm-4">
+                            <section class="contact-detail">
+                                <div class="head-office-address">
+                                    <h4 class="title">Head Office</h4>
+                                    <address>
+                                        Lorem Ipsum Dolor Sit Moon Avenue <br>No:11/21 Planet City,Earth
+                                    </address>
+                                    <p class="info"><span>Fax:</span>+1 212 691 1303</p>
+                                    <p class="info"><span>Tel:</span>+1 212 691 6862</p>
+                                    <p class="info"><span>E-mail:</span><a href="#">hello@hezy,org</a></p>
+                                </div>
+                                <hr>
+                                <div class="branch-office-address">
+                                    <h4 class="title">Branch Office</h4>
+                                    <address>
+                                        Lorem Ipsum Dolor Sit Moon Avenue <br>No:11/21 Planet City,Earth
+                                    </address>
+                                </div>
+                                <hr>
+                                <div class="social-connection">
+                                    <h4 class="title">Connect with Hezy Theme</h4>
+                                    <ul class="social-connection-list list-inline">
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </section>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.contact-box -->
+            </div><!-- /.contact-form-envelope -->
+        </div>
+    </div>
+</div><!-- /.row -->

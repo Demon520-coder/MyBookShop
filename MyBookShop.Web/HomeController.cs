@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyBookShop.Web.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,29 @@ namespace MyBookShop.Web
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult Books()
+        {
+            return View();
+        }
+
+        public ActionResult Conact()
+        {
+            return View();
+        }
+
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Conact(ConactViewModel conactView)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            return View(conactView);
         }
     }
 }
