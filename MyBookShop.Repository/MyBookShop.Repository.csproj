@@ -50,7 +50,11 @@
     <Compile Include="IDbSession.cs" />
     <Compile Include="IDependcy.cs" />
     <Compile Include="Implement\BookRepository.cs" />
+    <Compile Include="Implement\CartRepository.cs" />
+    <Compile Include="Implement\CustomerMessageRepository.cs" />
     <Compile Include="Interface\IBookRepository.cs" />
+    <Compile Include="Interface\ICartRepository.cs" />
+    <Compile Include="Interface\ICustomerMessageRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerDbSession.cs" />

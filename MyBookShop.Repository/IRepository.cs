@@ -1,4 +1,5 @@
-﻿using MyBookShop.Models;
+﻿using DapperExtensions;
+using MyBookShop.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +19,10 @@ namespace MyBookShop.Repository
 
         IEnumerable<T> GetAll();
 
-        IEnumerable<T> GetList<TOrder>(Expression<Func<T, bool>> where, Expression<Func<T, TOrder>> orderLamda);
+        IEnumerable<T> GetList(object param);
 
         T Find(TKey key);
+
+        IEnumerable<T> GetPageList(object where, IList<ISort> sorts, int page, int size);
     }
 }

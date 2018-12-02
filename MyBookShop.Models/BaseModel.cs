@@ -14,6 +14,6 @@ namespace MyBookShop.Models
 
         public bool IsDeleted { get; set; } = false;
 
-        public TKey CreateUserId { get; set; }
+        //public TKey CreateUserId { get; set; }
     }
 }

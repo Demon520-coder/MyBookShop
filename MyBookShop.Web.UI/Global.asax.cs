@@ -31,6 +31,11 @@ namespace MyBookShop.Web.UI
             //创建依赖解析容器
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+
+            //注册映射规则
+            MyBookShop.Web.AutoMap.MapSettings.MapConfigSettings();
+
+
         }
     }
 }

@@ -13,8 +13,7 @@
                         <div class="col-md-8 col-sm-8">
                             <div class="contact-form">
                                 @using (Html.BeginForm("Conact", "Home", FormMethod.Post))
-                                {
-                                    @Html.ValidationSummary(true, "")
+                                {                                   
                                     @Html.AntiForgeryToken()
                                     <div class="form-group">
                                         @Html.LabelFor(s => s.CustomerName, new { @class = "control-label col-sm-3 info-title" })
@@ -25,20 +24,20 @@
                                     <div class="form-group">
                                         @Html.LabelFor(s => s.Email, new { @class = "control-label col-sm-3 info-title" })
                                         @Html.TextBoxFor(s => s.Email, new { @class = "form-control bookshop-form-control", placeholder = "你的称呼" })
-                                        @Html.ValidationMessageFor(s => s.CustomerName, "", new { @class = "text-danger" })
+                                        @Html.ValidationMessage(nameof(Model.Email), "", new { @class = "text-danger" })
                                     </div><!-- /.form-group -->
 
                                     <div class="form-group">
                                         @Html.LabelFor(s => s.Subject, new { @class = "control-label col-sm-3 info-title" })
                                         @Html.TextBoxFor(s => s.Subject, new { @class = "form-control bookshop-form-control", placeholder = "你的称呼" })
-                                        @Html.ValidationMessageFor(s => s.CustomerName, "", new { @class = "text-danger" })
+                                        @Html.ValidationMessageFor(s => s.Subject, "", new { @class = "text-danger" })
                                     </div><!-- /.form-group -->
 
                                     <div class="form-group">
 
                                         @Html.LabelFor(s => s.Message, new { @class = "control-label col-sm-3 info-title" })
                                         @Html.TextAreaFor(s => s.Message, 5, 10, new { @class = "form-control bookshop-form-control" })
-                                        @Html.ValidationMessageFor(s => s.CustomerName, "", new { @class = "text-danger" })
+                                        @Html.ValidationMessageFor(s => s.Message, "", new { style = "color:red;" })
 
                                     </div><!-- /.form-group -->
 
@@ -90,3 +89,7 @@
         </div>
     </div>
 </div><!-- /.row -->
+@section scripts{
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
